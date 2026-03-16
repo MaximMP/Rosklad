@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f0f0f">
+    <meta name="description" content="Розклад занять UBTS - темна тема">
+    <title>📚 Розклад UBTS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-top">
+            <div class="logo">📚 UBTS Розклад</div>
+            <div class="live-badge">
+                <div class="live-dot"></div>
+                LIVE
+            </div>
+        </div>
+        <div class="current-time-display" id="clock">--:--</div>
+        <div class="current-date" id="date">Завантаження...</div>
+    </header>
+
+    <!-- Status Card -->
+    <div class="status-card" id="statusCard">
+        <div class="status-label">Зараз</div>
+        <div class="status-value" id="currentActivity">Визначення...</div>
+        <div class="status-task" id="currentTask">Оновлення статусу</div>
+        <div class="next-up" id="nextUp" style="display: none;">
+            <div class="next-label">Далі</div>
+            <div class="next-value" id="nextActivity">-</div>
+        </div>
+    </div>
+
+    <!-- Day Selector -->
+    <nav class="day-selector" id="daySelector">
+        <button class="day-btn" data-day="1">Пн</button>
+        <button class="day-btn" data-day="2">Вт</button>
+        <button class="day-btn" data-day="3">Ср</button>
+        <button class="day-btn" data-day="4">Чт</button>
+        <button class="day-btn" data-day="5">Пт</button>
+    </nav>
+
+    <div class="view-hint">📱 Мобільна: таймлайн | 💻 Десктоп: таблиця</div>
+
+    <!-- Mobile: Timeline View -->
+    <main class="timeline-container" id="timelineContainer">
+        <div class="timeline" id="timeline"></div>
+        <div class="swipe-hint" id="swipeHint">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            Свайпай для перемикання днів
+        </div>
+    </main>
+
+    <!-- Desktop: Dark Table View -->
+    <main class="table-container" id="tableContainer">
+        <div class="schedule-wrapper">
+            <table id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th>Час</th>
+                        <th>№</th>
+                        <th>Понеділок</th>
+                        <th>Вівторок</th>
+                        <th>Середа</th>
+                        <th>Четвер</th>
+                        <th>П'ятниця</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>📅 Автоматично оновлюється | UBTS Розклад</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
